@@ -133,7 +133,7 @@ def format_cosmosqa(ex, rng):
     if hard_label:
         answer = true_answer
     else:
-        candidate_answers = [ex["answer" + str(i)] for i in range(4)]
+        candidate_answers = [ex[f"answer{str(i)}"] for i in range(4)]
         answer = rng.choice([x for x in candidate_answers if x != true_answer])
     txt = f"Context: {ex['context']}\nQuestion: {ex['question']}\nAnswer: {answer}"
     return dict(txt=txt, hard_label=hard_label)

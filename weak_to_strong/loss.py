@@ -94,7 +94,7 @@ class logconf_loss_fn(LossFnBase):
         logits = logits.float()
         labels = labels.float()
         coef = 1.0 if step_frac > self.warmup_frac else step_frac
-        coef = coef * self.aux_coef
+        coef *= self.aux_coef
         preds = torch.softmax(logits, dim=-1)
         mean_weak = torch.mean(labels, dim=0)
         assert mean_weak.shape == (2,)
