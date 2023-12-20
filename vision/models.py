@@ -17,13 +17,11 @@ def _alexnet_replace_fc(model):
 
 
 def resnet50_dino():
-    model = torch.hub.load("facebookresearch/dino:main", "dino_resnet50")
-    return model
+    return torch.hub.load("facebookresearch/dino:main", "dino_resnet50")
 
 
 def vitb8_dino():
-    model = torch.hub.load("facebookresearch/dino:main", "dino_vitb8")
-    return model
+    return torch.hub.load("facebookresearch/dino:main", "dino_vitb8")
 
 
 def alexnet():

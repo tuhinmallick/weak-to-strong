@@ -39,7 +39,7 @@ def get_embeddings(model, loader):
 
     all_embeddings = torch.cat(all_embeddings, axis=0)
     all_y = torch.cat(all_y, axis=0)
-    if len(all_probs) > 0:
+    if all_probs:
         all_probs = torch.cat(all_probs, axis=0)
         acc = (torch.argmax(all_probs, dim=1) == all_y).float().mean()
     else:
